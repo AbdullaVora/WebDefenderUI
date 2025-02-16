@@ -1,6 +1,37 @@
 @import "tailwindcss";
 
+body {
+  background-color: #0e1427;
+}
 
+/* .main-container {
+  margin-left: 220px;
+  padding-top: 66px;
+} */
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.content-with-sidebar {
+  transition: margin-left 0.3s ease-in-out;
+  padding-top: 66px;
+}
+
+.content-with-sidebar.aside-expanded {
+  margin-left: 220px;
+}
+
+.content-with-sidebar.aside-collapsed {
+  margin-left: 68px;
+}
+
+@media (max-width: 768px) {
+  .content-with-sidebar.aside-expanded,
+  .content-with-sidebar.aside-collapsed {
+    margin-left: 0;
+  }
+}
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

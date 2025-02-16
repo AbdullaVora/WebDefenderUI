@@ -1,20 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Header from './components/Header'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./pages/dashboard/main";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Tools from "./pages/dashboard/Tools";
+import ProtectedRoute from "./auth/ProtectedRoute";
+import NotFound from "./errors/NotFound";
+import Layout from "./layout/Layout";
 
 function App() {
-
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* Public Routes */}
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Protected Routes (Wrapped with Layout) */}
+        <Route element={<ProtectedRoute />}>
+          <Route
+            path="/dashboard"
+            element={
+              <Layout>
+                <Main />
+              </Layout>
+            }
+          />
+          <Route
+            path="/tools"
+            element={
+              <Layout>
+                <Tools />
+              </Layout>
+            }
+          />
+        </Route>
+
+        {/* 404 Not Found */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
