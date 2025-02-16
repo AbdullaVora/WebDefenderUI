@@ -16,7 +16,8 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* Protected Routes (Wrapped with Layout) */}
-        <Route element={<ProtectedRoute />}>
+        {/* <Route element={<ProtectedRoute />}>
+        </Route> */}
           <Route
             path="/dashboard"
             element={
@@ -33,7 +34,6 @@ function App() {
               </Layout>
             }
           />
-        </Route>
 
         {/* 404 Not Found */}
         <Route path="*" element={<NotFound />} />
