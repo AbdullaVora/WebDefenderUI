@@ -25,8 +25,9 @@ export const register = createAsyncThunk('/auth/register', async (data, { reject
 
 export const login = createAsyncThunk('/auth/login', async (data, { rejectWithValue }) => {
     try {
+        console.log("Sending registration request with data:", data);  // Log the request data
         const response = await api.post('/api/auth/login', data);
-        console.log(response.data);
+        console.log("data:", response);
         
         if (response.status === 200) {
             const token = response.data.token;

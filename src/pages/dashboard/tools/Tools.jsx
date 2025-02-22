@@ -1,6 +1,6 @@
 import React from 'react'
-import ToolBox from '../../components/ToolBox'
-import { tools } from '../../data/ToolsContainer.json'
+import ToolBox from '../../../components/ToolBox'
+import { tools } from '../../../data/ToolsContainer.json'
 const Tools = () => {
 
     return (
@@ -12,7 +12,7 @@ const Tools = () => {
             <div className="flex flex-wrap mx-3">
                 {
                     tools.map((tool, index) => (
-                        <ToolBox key={index} title={tool.title} description={tool.description} />
+                        <ToolBox key={index} title={tool.title} description={tool.description} subtool={tool.subtool} />
                     ))
                 }
             </div>

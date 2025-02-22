@@ -1,32 +1,40 @@
 {
     "tools": [
         {
-            "title": "XSS Scanner",
-            "description": "XSS Scanner detects and prevents cross-site scripting (XSS) vulnerabilities by identifying unsafe user inputs that could be exploited for attacks."
+            "title": "XSS-Scanner",
+            "description": "XSS Scanner detects and prevents cross-site scripting (XSS) vulnerabilities by identifying unsafe user inputs that could be exploited for attacks.",
+            "subtool": "true",
+            "subtools": [
+                {
+                    "title": "Refected Xss",
+                    "description": "XSS Scanner detects and prevents cross-site scripting (XSS) vulnerabilities by identifying unsafe user inputs that could be exploited for attacks."
+                }
+            ]
         },
         {
             "title": "SQL Injection Scanner",
-            "description": "SQL Injection Scanner helps detect and prevent SQL injection attacks by identifying unsafe user inputs that could be used to manipulate database queries."
+            "description": "SQL Injection Scanner helps detect and prevent SQL injection attacks by identifying unsafe user inputs that could be used to manipulate database queries.",
+            "subtool": "false"
         },
         {
             "title": "Search Engine Scanner",
-            "description": "Search Engine Scanner identifies security risks and sensitive data exposure in search engine results, helping protect your online presence"
+            "description": "Search Engine Scanner identifies security risks and sensitive data exposure in search engine results, helping protect your online presence",
+            "subtool": "true"
         },
         {
             "title": "WAF Detector",
-            "description": "WAF Detector analyzes web traffic to identify active Web Application Firewalls, helping assess security measures and potential bypass techniques"
+            "description": "WAF Detector analyzes web traffic to identify active Web Application Firewalls, helping assess security measures and potential bypass techniques",
+            "subtool": "false"
         },
         {
             "title": "Subdomain Reconnaissance",
-            "description": "Subdomain Recon identifies hidden subdomains of a target domain, helping uncover attack surfaces and potential security risks"
+            "description": "Subdomain Recon identifies hidden subdomains of a target domain, helping uncover attack surfaces and potential security risks",
+            "subtool": "false"
         },
         {
             "title": "Hidden Files / Dir Reconnaissance",
-            "description": "Hidden Files/Directory Reconnaissance identifies unlisted files and directories on a web server, helping uncover potential security risks and sensitive data exposure."
-        },
-        {
-            "title": "Wayback machine",
-            "description": "Wayback Machine archives website snapshots over time, helping retrieve deleted content, track changes, and uncover hidden data for research and security analysis."
+            "description": "Hidden Files/Directory Reconnaissance identifies unlisted files and directories on a web server, helping uncover potential security risks and sensitive data exposure.",
+            "subtool": "false"
         }
     ]
 }

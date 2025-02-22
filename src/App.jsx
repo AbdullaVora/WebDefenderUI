@@ -2,10 +2,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/dashboard/main";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Tools from "./pages/dashboard/Tools";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import NotFound from "./errors/NotFound";
 import Layout from "./layout/Layout";
+import Tools from "./pages/dashboard/tools/Tools";
+import SubTools from "./pages/dashboard/tools/subTools";
 
 function App() {
   return (
@@ -16,8 +17,7 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* Protected Routes (Wrapped with Layout) */}
-        {/* <Route element={<ProtectedRoute />}>
-        </Route> */}
+        <Route element={<ProtectedRoute />}>
           <Route
             path="/dashboard"
             element={
@@ -26,6 +26,8 @@ function App() {
               </Layout>
             }
           />
+
+          {/* Tools */}
           <Route
             path="/tools"
             element={
@@ -34,7 +36,17 @@ function App() {
               </Layout>
             }
           />
-
+          {/* Dynamic subtools route */}
+          <Route
+            path="/tools/:toolTitle"
+            element={
+              <Layout>
+                <SubTools />
+              </Layout>
+            }
+          />
+        </Route>
+        
         {/* 404 Not Found */}
         <Route path="*" element={<NotFound />} />
       </Routes>
