@@ -31,7 +31,7 @@
 import axios from "axios";
 
 const apiInstance = axios.create({
-  baseURL: "https://webdefender-backend.onrender.com",
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
