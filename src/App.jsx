@@ -6,8 +6,8 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import NotFound from "./errors/NotFound";
 import Layout from "./layout/Layout";
 import Tools from "./pages/dashboard/tools/Tools";
-import SubTools from "./pages/dashboard/tools/subTools";
-import Scaner from "./pages/dashboard/scaner";
+import SubTools from "./pages/dashboard/tools/SubTools";
+import Scaner from "./pages/dashboard/Scaner"
 
 function App() {
   return (
