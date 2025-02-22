@@ -11,27 +11,24 @@ import { Link } from "react-router-dom";
 const Aside = ({ isCollapsed }) => {
   return (
     <div
-      className={`aside fixed mt-16 start-0 z-20 h-screen bg-[#040C1F] transition-all duration-300 border-e border-[#4C566A] ${
-        isCollapsed ? "w-[68px]" : "w-[220px]"
-      }`}
+      className={`aside fixed mt-16 start-0 z-20 h-screen bg-[#040C1F] transition-all duration-300 border-e border-[#4C566A] ${isCollapsed ? "w-[68px]" : "w-[220px]"
+        }`}
     >
       <div
-        className={`flex flex-col ${
-          isCollapsed ? "items-center px-2" : "px-5"
-        }`}
-      >
-        <button
-          type="button"
-          className={`bg-[#00FFFF] flex cursor-pointer items-center justify-center rounded-[5px] font-bold text-black transition-all ${
-            isCollapsed ? "w-10 h-10 p-0 mt-5" : "w-[170px] py-[6px] mt-5"
+        className={`flex flex-col ${isCollapsed ? "items-center px-2" : "px-5"
           }`}
+      >
+        <Link to="/tools"><button
+          type="button"
+          className={`bg-[#00FFFF] flex cursor-pointer items-center justify-center rounded-[5px] font-bold text-black transition-all ${isCollapsed ? "w-10 h-10 p-0 mt-5" : "w-[170px] py-[6px] mt-5"
+            }`}
         >
           <MdOutlineElectricBolt
             size={22}
             className={isCollapsed ? "" : "ms-[-10px]"}
           />
           {!isCollapsed && "New Scan"}
-        </button>
+        </button></Link>
 
         <div className="workspace w-full mt-6">
           {!isCollapsed && (
@@ -44,9 +41,8 @@ const Aside = ({ isCollapsed }) => {
           >
             <Link to="/dashboard" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <HiOutlineDesktopComputer size={20} />
                 {!isCollapsed && "Dashboard"}
@@ -54,9 +50,8 @@ const Aside = ({ isCollapsed }) => {
             </Link>
             <Link to="/assets" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <PiTargetBold size={20} />
                 {!isCollapsed && "Assets"}
@@ -64,9 +59,8 @@ const Aside = ({ isCollapsed }) => {
             </Link>
             <Link to="/scans" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <IoPulseSharp size={20} />
                 {!isCollapsed && "Scans"}
@@ -74,9 +68,8 @@ const Aside = ({ isCollapsed }) => {
             </Link>
             <Link to="/findings" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <IoBugSharp size={20} />
                 {!isCollapsed && "Findings"}
@@ -84,9 +77,8 @@ const Aside = ({ isCollapsed }) => {
             </Link>
             <Link to="/surface" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <PiCompassRoseDuotone size={20} />
                 {!isCollapsed && "Attack Surface"}
@@ -94,9 +86,8 @@ const Aside = ({ isCollapsed }) => {
             </Link>
             <Link to="/tools" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <BsTools size={20} />
                 {!isCollapsed && "Tools"}
@@ -114,9 +105,8 @@ const Aside = ({ isCollapsed }) => {
           >
             <Link to="/reports" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <HiClipboardDocumentList size={20} />
                 {!isCollapsed && "Reports"}
@@ -124,9 +114,8 @@ const Aside = ({ isCollapsed }) => {
             </Link>
             <Link to="/team" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <FaUsers size={20} />
                 {!isCollapsed && "Team"}
@@ -134,9 +123,8 @@ const Aside = ({ isCollapsed }) => {
             </Link>
             <Link to="/settings" className="text-decoration-none">
               <li
-                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${
-                  isCollapsed ? "justify-center" : "gap-3"
-                }`}
+                className={`flex cursor-pointer items-center font-medium text-[#00E6E6] opacity-60 hover:opacity-100 transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
+                  }`}
               >
                 <IoSettingsSharp size={20} />
                 {!isCollapsed && "Settings"}

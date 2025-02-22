@@ -6,8 +6,12 @@
             "subtool": "true",
             "subtools": [
                 {
-                    "title": "Refected Xss",
-                    "description": "XSS Scanner detects and prevents cross-site scripting (XSS) vulnerabilities by identifying unsafe user inputs that could be exploited for attacks."
+                    "title": "Reflected Xss",
+                    "description": "Reflected XSS occurs when an attacker injects malicious scripts into input that is immediately echoed by the web server, enabling the execution of unauthorized code in a user's browser"
+                },
+                {
+                    "title": "DOM-Based Xss",
+                    "description": "The vulnerability exists in the client-side JavaScript rather than the server. The script modifies the page dynamically (e.g., manipulating the DOM with document.write or innerHTML)."
                 }
             ]
         },

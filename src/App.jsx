@@ -7,6 +7,7 @@ import NotFound from "./errors/NotFound";
 import Layout from "./layout/Layout";
 import Tools from "./pages/dashboard/tools/Tools";
 import SubTools from "./pages/dashboard/tools/subTools";
+import Scaner from "./pages/dashboard/scaner";
 
 function App() {
   return (
@@ -33,6 +34,14 @@ function App() {
             element={
               <Layout>
                 <Tools />
+              </Layout>
+            }
+          />
+          <Route
+            path="/tools/:toolTitle/scan"
+            element={
+              <Layout>
+                <Scaner />
               </Layout>
             }
           />

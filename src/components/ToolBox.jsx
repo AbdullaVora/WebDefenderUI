@@ -9,7 +9,7 @@ const ToolBox = ({ title, description, subtool }) => {
       // Navigate to the dynamic subtools route with the tool title as a parameter
       navigate(`/tools/${decodeURI(title).replace(/\s+/g, '')}`);
     } else {
-      navigate('/tools/s');
+      navigate(`/tools/${decodeURI(title).replace(/\s+/g, '')}/scan`);
     }
   }
 

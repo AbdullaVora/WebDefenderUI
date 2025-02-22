@@ -5,10 +5,13 @@ import { FaStar, FaUserAlt } from "react-icons/fa";
 import { GrUserSettings } from "react-icons/gr";
 import { IoLogOut } from "react-icons/io5";
 import { RiMenuFoldLine, RiMenuUnfoldLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { logOut } from "../store/slices/userSlice";
 
 const Header = ({ isAsideCollapsed, setIsAsideCollapsed }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
+  const dispatch = useDispatch()
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -17,6 +20,11 @@ const Header = ({ isAsideCollapsed, setIsAsideCollapsed }) => {
   const toggleAside = () => {
     setIsAsideCollapsed(!isAsideCollapsed);
   };
+
+  const handleLogout = () => {
+    setShowDropdown(false);
+    dispatch(logOut())
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -83,7 +91,7 @@ const Header = ({ isAsideCollapsed, setIsAsideCollapsed }) => {
                 </button>
                 <button
                   className="flex justify-start items-center gap-2 w-full text-left font-medium px-4 py-2 text-[#00E6E6] hover:bg-red-500 hover:text-white transition"
-                  onClick={() => setShowDropdown(false)}
+                  onClick={() => handleLogout()}
                 >
                   <IoLogOut size={22} className="ms-[-2px]" />
                   Sign Out
