@@ -23,7 +23,17 @@
         {
             "title": "Search Engine Scanner",
             "description": "Search Engine Scanner identifies security risks and sensitive data exposure in search engine results, helping protect your online presence",
-            "subtool": "true"
+            "subtool": "true",
+            "subtools": [
+                {
+                    "title": "Shodan Search Engine",
+                    "description": "Shodan is a search engine that scans and indexes internet-connected devices, revealing their configurations, exposed services, and potential vulnerabilities."
+                },
+                {
+                    "title": "Censys Search Engine",
+                    "description": "Censys is an internet search engine that continuously scans and indexes global devices and services, helping security researchers and network admins identify vulnerabilities and monitor online trends."
+                }
+            ]
         },
         {
             "title": "WAF Detector",

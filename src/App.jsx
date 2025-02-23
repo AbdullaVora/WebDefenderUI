@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./pages/dashboard/Main";
+import Main from "./pages/Dashboard/Main";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import NotFound from "./errors/NotFound";
 import Layout from "./layout/Layout";
-import Tools from "./pages/dashboard/tools/Tools";
-import SubTools from "./pages/dashboard/tools/SubTools";
-import Scaner from "./pages/dashboard/Scaner"
+import Tools from "./pages/Dashboard/Tools/Tools";
+import SubTools from "./pages/Dashboard/Tools/SubTools";
+import Scaner from "./pages/Dashboard/Scaner"
 
 function App() {
   return (
