@@ -32,7 +32,7 @@ import WifiTetheringErrorIcon from "@mui/icons-material/WifiTetheringError";
 //     )
 // }
 
-const Main = () => {
+const Dashboard_Main = () => {
   const scanners = [
     {
       icon: (
@@ -94,4 +94,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Dashboard_Main;
