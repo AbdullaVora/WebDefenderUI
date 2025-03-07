@@ -1,7 +1,7 @@
 import React from 'react'
 import ToolBox from '../../../components/ToolBox'
 import { tools } from '../../../data/ToolsContainer.json'
-const Tools = () => {
+const Tools_Main = () => {
 
     return (
         <div className='main-cintainers'>
@@ -20,4 +20,4 @@ const Tools = () => {
     )
 }
 
-export default Tools;
+export default Tools_Main;

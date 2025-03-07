@@ -5,9 +5,9 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import NotFound from "./errors/NotFound";
 import Layout from "./layout/Layout";
 import Scaner from "./pages/dashboard/Scaner";
-import Tools from "./pages/Dashboard/Tools/Tools";
 import SubTools from "./pages/Dashboard/Tools/SubTools";
 import Dashboard_Main from "./pages/Dashboard/Dashboard_Main";
+import Tools_Main from "./pages/Dashboard/Tools/Tools_Main";
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
             path="/tools"
             element={
               <Layout>
-                <Tools />
+                <Tools_Main />
               </Layout>
             }
           />
