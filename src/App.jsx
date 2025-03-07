@@ -3,9 +3,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import NotFound from "./errors/NotFound";
+import Main from "./pages/Dashboard/Main";
 import Layout from "./layout/Layout";
 import Scaner from "./pages/dashboard/Scaner";
-import Main from "./pages/Dashboard/Main";
 import Tools from "./pages/Dashboard/Tools/Tools";
 import SubTools from "./pages/Dashboard/Tools/SubTools";
 
