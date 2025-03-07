@@ -1,0 +1,54 @@
+  {/* Conditionally show these inputs if enabled */}
+                {enabled && (
+                    <>
+                        {/* Upload URL file */}
+                        <div className="url-file mt-4">
+                            <label className="block mb-1 text-[#04D2D2] font-semibold">Upload URL file</label>
+                            <input
+                                type="file"
+                                name="url"
+                                className="w-full sm:w-8/9 p-2 cursor-pointer rounded-md text-white bg-[#0F172A] border border-[#4C566A] focus:outline-none focus:ring-2 focus:ring-[#04D2D2]"
+                            />
+                        </div>
+
+                        {/* Payload Options */}
+                        <div className="choose-option mt-3">
+                            <div className="flex items-center gap-3">
+                                <input
+                                    type="radio"
+                                    id="none"
+                                    name="payloadOption"
+                                    value="none"
+                                    checked={payloadOption === "none"}
+                                    onChange={(e) => setPayloadOption(e.target.value)}
+                                    className="w-4 h-4 cursor-pointer appearance-none border-2 border-[#04D2D2] rounded-full checked:bg-[#04D2D2] checked:border-transparent transition-all duration-200"
+                                />
+                                <label htmlFor="none" className="text-[#04D2D2] font-semibold text-[14px]">None</label>
+                            </div>
+                            <div className="flex items-center gap-3 mt-2">
+                                <input
+                                    type="radio"
+                                    id="custom-payload"
+                                    name="payloadOption"
+                                    value="custom-payload"
+                                    checked={payloadOption === "custom-payload"}
+                                    onChange={(e) => setPayloadOption(e.target.value)}
+                                    className="w-4 h-4 cursor-pointer appearance-none border-2 border-[#04D2D2] rounded-full checked:bg-[#04D2D2] checked:border-transparent transition-all duration-200"
+                                />
+                                <label htmlFor="custom-payload" className="text-[#04D2D2] font-semibold text-[14px]">Choose your own payloads</label>
+                            </div>
+                        </div>
+
+                        {/* Conditional Payload Upload */}
+                        {payloadOption === "custom-payload" && (
+                            <div className="url-file mt-4">
+                                <label className="block mb-1 text-[#04D2D2] font-semibold">Upload payloads file</label>
+                                <input
+                                    type="file"
+                                    name="payloads"
+                                    className="w-full sm:w-8/9 p-2 cursor-pointer rounded-md text-white bg-[#0F172A] border border-[#4C566A] focus:outline-none focus:ring-2 focus:ring-[#04D2D2]"
+                                />
+                            </div>
+                        )}
+                    </>
+                )}

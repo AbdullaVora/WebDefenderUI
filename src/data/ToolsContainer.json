@@ -21,7 +21,7 @@
             "subtool": "false"
         },
         {
-            "title": "Search Engine Scanner",
+            "title": "Search-Engine-Scanner",
             "description": "Search Engine Scanner identifies security risks and sensitive data exposure in search engine results, helping protect your online presence",
             "subtool": "true",
             "subtools": [
@@ -41,7 +41,7 @@
             "subtool": "false"
         },
         {
-            "title": "Subdomain Reconnaissance",
+            "title": "Subdomain-Reconnaissance",
             "description": "Subdomain Recon identifies hidden subdomains of a target domain, helping uncover attack surfaces and potential security risks",
             "subtool": "false"
         },
