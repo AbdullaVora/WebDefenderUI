@@ -7,7 +7,8 @@ import NotFound from "./errors/NotFound";
 import Layout from "./layout/Layout";
 import Tools from "./pages/Dashboard/Tools/Tools";
 import SubTools from "./pages/Dashboard/Tools/SubTools";
-import Scaner from "./pages/Dashboard/Scaner"
+import Scaner from "./pages/dashboard/Scaner";
+
 
 function App() {
   return (
