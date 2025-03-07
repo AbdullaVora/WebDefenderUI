@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { tools } from '../../../data/ToolsContainer.json';
 import ToolBox from '../../../components/ToolBox';
 
-const SubTools = () => {
+const SubTool = () => {
   const { toolTitle } = useParams();
 
   // Find the tool data based on the title parameter
@@ -33,4 +33,4 @@ const SubTools = () => {
   );
 };
 
-export default SubTools;
+export default SubTool;
