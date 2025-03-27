@@ -1,14 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import ProtectedRoute from "./auth/ProtectedRoute";
+
+import ProtectedRoute from "./protect/ProtectedRoute";
 import NotFound from "./errors/NotFound";
 import Layout from "./layout/Layout";
-import Scaner from "./pages/dashboard/Scaner";
 import Dashboard_Main from "./pages/Dashboard/Dashboard_Main";
 import Tools_Main from "./pages/Dashboard/Tools/Tools_Main";
 import SubTool from "./pages/Dashboard/Tools/SubTool";
-
+import Reports from "./pages/Dashboard/Reports";
+import Scaner from "./pages/Dashboard/Scaner";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import Scan from "./pages/Dashboard/Scan";
+import NewScan from "./pages/Dashboard/NewScan";
+import Account from "./pages/Dashboard/Account";
+import PricingPlan from "./pages/Dashboard/PricingPlan";
 
 function App() {
   return (
@@ -19,7 +24,8 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         {/* Protected Routes (Wrapped with Layout) */}
-        <Route element={<ProtectedRoute />}>
+        {/* <Route element={<ProtectedRoute />}> */}
+        <Route>
           <Route
             path="/dashboard"
             element={
@@ -46,12 +52,56 @@ function App() {
               </Layout>
             }
           />
+
           {/* Dynamic subtools route */}
           <Route
             path="/tools/:toolTitle"
             element={
               <Layout>
                 <SubTool />
+              </Layout>
+            }
+          />
+
+          {/* Reports Route */}
+          <Route
+            path="/reports"
+            element={
+              <Layout>
+                <Reports />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/scan"
+            element={
+              <Layout>
+                <Scan />
+              </Layout>
+            }
+          />
+          <Route
+            path="/new-scan"
+            element={
+              <Layout>
+                <NewScan />
+              </Layout>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <Layout>
+                <Account />
+              </Layout>
+            }
+          />
+          <Route
+            path="/plans&pricing"
+            element={
+              <Layout>
+                <PricingPlan />
               </Layout>
             }
           />

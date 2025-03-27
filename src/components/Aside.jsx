@@ -59,10 +59,10 @@ const Aside = ({ isCollapsed }) => {
                 {!isCollapsed && "Assets"}
               </li>
             </Link>
-            <Link to="/scans" className="text-decoration-none">
+            <Link to="/scan" className="text-decoration-none">
               <li
                 className={`flex cursor-pointer items-center font-medium transition-all p-2 rounded-md hover:bg-[#1A2C4E] ${isCollapsed ? "justify-center" : "gap-3"
-                  } ${location.pathname === "/scans"
+                  } ${location.pathname === "/scan"
                     ? "text-[#00FFFF] bg-[#1A2C4E] opacity-100"
                     : "text-[#00E6E6] opacity-60 hover:opacity-100"
                   }`}

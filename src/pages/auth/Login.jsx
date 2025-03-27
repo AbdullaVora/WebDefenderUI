@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Eye, EyeOff, ArrowRight } from "lucide-react";
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../store/slices/userSlice";
+import { login } from "../../store/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {

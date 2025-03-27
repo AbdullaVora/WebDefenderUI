@@ -12,12 +12,12 @@ const initialState = {
 };
 
 // POST request to start the subdomain scan
-export const subDomainUrl = createAsyncThunk(
+export const scanStart = createAsyncThunk(
     "/tools/subDomain",
-    async (data, { rejectWithValue }) => {
+    async ({ domain, path, custom }, { rejectWithValue }) => {
         try {
-            console.log("Starting scan for URL: ", data);
-            const response = await apiInstance.post("/api/tools/subdomain-scan", data);
+            console.log("Starting scan for URL: ", domain, path);
+            const response = await apiInstance.post(`/api/tools/${path}`, { domain: domain, custom: custom }, { headers: { 'Content-Type': 'application/json' } });
             console.log("Scan started: ", response.data);
             return response.data;
         } catch (error) {
@@ -27,12 +27,12 @@ export const subDomainUrl = createAsyncThunk(
 );
 
 // GET request to fetch scan results
-export const fetchSubDomainData = createAsyncThunk(
+export const fetchResult = createAsyncThunk(
     "/tools/fetchSubDomainData",
-    async (domain, { rejectWithValue }) => {
+    async ({ domain, path }, { rejectWithValue }) => {
         try {
             console.log("Fetching scan results for domain: ", domain);
-            const response = await apiInstance.get(`/api/tools/scan-status/${domain}`);
+            const response = await apiInstance.get(`/api/tools/${path}-status/${domain}`, { headers: { 'Content-Type': 'application/json' } });
             console.log("Scan results: ", response.data);
             return response.data;
         } catch (error) {
@@ -58,27 +58,28 @@ const toolsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             // Handle POST request (subDomainUrl)
-            .addCase(subDomainUrl.pending, (state) => {
+            .addCase(scanStart.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(subDomainUrl.fulfilled, (state, action) => {
-                state.loading = false;
+            .addCase(scanStart.fulfilled, (state, action) => {
+                state.loading = false;  
                 state.response.push(action.payload);
                 state.status = true;
+                state.scanResults.push(action.payload.results)
             })
-            .addCase(subDomainUrl.rejected, (state, action) => {
+            .addCase(scanStart.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
                 state.status = false;
             })
 
             // Handle GET request (fetchSubDomainData)
-            .addCase(fetchSubDomainData.pending, (state) => {
+            .addCase(fetchResult.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(fetchSubDomainData.fulfilled, (state, action) => {
+            .addCase(fetchResult.fulfilled, (state, action) => {
                 state.loading = false;
                 const { domain, subdomains, live_subdomains, logs } = action.payload;
                 const scan = {
@@ -90,7 +91,7 @@ const toolsSlice = createSlice({
                 };
                 state.scanResults.push({ domain, scans: [scan] });
             })
-            .addCase(fetchSubDomainData.rejected, (state, action) => {
+            .addCase(fetchResult.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             });

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, ArrowRight } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { useDispatch } from "react-redux";
-import { register } from "../store/slices/userSlice";
+import { register } from "../../store/slices/userSlice";
 
 const Register = () => {
   const dispatch = useDispatch()
